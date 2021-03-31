@@ -8,7 +8,8 @@ from django.db import models
 
 
 class StudentTable(models.Model):
-    student_id: models.ForeignKey
+    student_id = models.ForeignKey
+    owner = models.IntegerField(default=00)
     subject = models.CharField(max_length=20)
     ia1 = models.IntegerField()
     ia2 = models.IntegerField()
@@ -19,6 +20,7 @@ class StudentTable(models.Model):
 class TeacherTable(models.Model):
     teacher_id: models.ForeignKey
     student_name = models.CharField(max_length=20)
+    owner = models.IntegerField(default=00)
     student_roll = models.IntegerField(default=0)
     ia1 = models.IntegerField()
     ia2 = models.IntegerField()
